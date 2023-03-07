@@ -1,0 +1,168 @@
+{
+  "main": {
+    "id": "ac0bf44355133e39",
+    "type": "split",
+    "children": [
+      {
+        "id": "e54bdbbd7c2acdad",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "151e50bf03cb1de2",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "CTDTGT_Buoi01.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "c834c13b6e051216",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "CTDLGT_Buoi02.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "a7efeb2207f44f43",
+    "type": "split",
+    "children": [
+      {
+        "id": "010d5e7463e8242e",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "58f6a63c42108135",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "ffb26638827a4966",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "d881f3818770e1b0",
+            "type": "leaf",
+            "state": {
+              "type": "starred",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "cdb2ded192a6dda8",
+    "type": "split",
+    "children": [
+      {
+        "id": "b2e8b6a2397c9d4d",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "cb5c4a75d871e81b",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "CTDTGT_Buoi01.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "ee90328a3d370c5c",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "CTDTGT_Buoi01.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "651cb7d6aa4b3d9c",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "3759268c5752dcaf",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "CTDTGT_Buoi01.md"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false
+    }
+  },
+  "active": "151e50bf03cb1de2",
+  "lastOpenFiles": [
+    "CTDLGT_Buoi02.md",
+    "CTDTGT_Buoi01.md",
+    "BT.md",
+    "Note_linh_tinh"
+  ]
+}
