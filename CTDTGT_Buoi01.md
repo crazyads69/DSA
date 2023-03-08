@@ -117,9 +117,13 @@ int BinarySearch(int arr[], int n, int x)
             - **A** là mảng chứa phần tử cần tìm.
             - **X** là giá trị cần tìm.
         - Thay vì xác định điểm **mid** bằng công thức:
+
         $$ mid = {left+right \over 2} $$
+
         - Thuật toán tìm kiếm nội suy xác định điểm **mid** bằng công thức sau:
+
         $$ mid = {left+{ {(right - left)\times(X - A[left])}\over{A[right] - A[left]}}} $$
+
         - Các bước còn lại thực hiện tương tự thuật toán tìm kiếm nhị phân.
     
 - **Cài đặt thuật toán tìm kiếm nội suy:**
