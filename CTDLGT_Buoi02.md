@@ -6,5 +6,3 @@
 - Độ phức tạp của thuật toán ( được xét trong trường hợp xấu nhất ).
 - Xét bậc cao nhất của hàm số trong đánh giá giải thuật.
 -  **O(log(n))** < **O(n)** 
-- Các chuỗi hội tụ dùng để suy ra độ phức tạp:
-- 

@@ -144,4 +144,5 @@ int InterpolationSearch(int arr[], int n, int x)
 ```
 
 
-
+4.  **Tìm kiếm nhị phân dạng cây ( Binary Search Tree)**
+- 
