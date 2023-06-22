@@ -66,7 +66,7 @@ int Front(QUEUE q)
     return q.pHead->info;
 }
 
-void PrintStack(QUEUE q)
+void PrintQueue(QUEUE q)
 {
     while (IsEmptyQueue(q) == false)
     {
@@ -88,6 +88,6 @@ int main()
     EnQueue(q, p);
     p = CreateNode(5);
     EnQueue(q, p);
-    PrintStack(q);
+    PrintQueue(q);
     return 0;
 }
