@@ -65,7 +65,7 @@ int Top(STACK s)
     return s.pHead->info;
 }
 
-void Output(STACK s)
+void PrintStack(STACK s)
 {
     while (IsEmpty(s) == false)
     {
@@ -88,6 +88,6 @@ int main()
     Push(s, p);
     p = CreateNode(5);
     Push(s, p);
-    Output(s);
+    PrintStack(s);
     return 0;
 }
