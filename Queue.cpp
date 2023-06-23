@@ -20,7 +20,7 @@ void CreateQueue(QUEUE &q)
     q.pHead = q.pTail = NULL;
 }
 
-int IsEmptyQueue(QUEUE q)
+int IsEmpty(QUEUE q)
 {
     if (q.pHead == NULL)
         return 1;
@@ -39,7 +39,7 @@ NODE *CreateNode(int x)
 
 void EnQueue(QUEUE &q, NODE *p)
 {
-    if (IsEmptyQueue(q) == true)
+    if (IsEmpty(q) == true)
         q.pHead = q.pTail = p;
     else
     {
@@ -50,7 +50,7 @@ void EnQueue(QUEUE &q, NODE *p)
 
 int DeQueue(QUEUE &q)
 {
-    if (IsEmptyQueue(q) == true)
+    if (IsEmpty(q) == true)
         return 0;
     NODE *p = q.pHead;
     int x = p->info;
@@ -61,14 +61,14 @@ int DeQueue(QUEUE &q)
 
 int Front(QUEUE q)
 {
-    if (IsEmptyQueue(q) == true)
+    if (IsEmpty(q) == true)
         return 0;
     return q.pHead->info;
 }
 
 void PrintQueue(QUEUE q)
 {
-    while (IsEmptyQueue(q) == false)
+    while (IsEmpty(q) == false)
     {
         cout << DeQueue(q) << " ";
     }
