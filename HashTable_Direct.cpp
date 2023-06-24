@@ -69,20 +69,22 @@ Node *SearchNode(HashTable HT, int x)
 
 void DeleteHead(Node *&l)
 {
-    if (l == NULL)
-        return;
-    Node *p = l;
-    l = l->pNext;
-    delete p;
+    if (l != NULL)
+    {
+        Node *p = l;
+        l = l->pNext;
+        delete p;
+    }
 }
 
 void DeleteAfter(Node *&q)
 {
     Node *p = q->pNext;
-    if (p == NULL)
-        return;
-    q->pNext = p->pNext;
-    delete p;
+    if (p != NULL)
+    {
+        q->pNext = p->pNext;
+        delete p;
+    }
 }
 
 void DeleteNode(HashTable &HT, int x)
@@ -95,8 +97,6 @@ void DeleteNode(HashTable &HT, int x)
         q = p;
         p = p->pNext;
     }
-    if (p == NULL)
-        return;
     if (p == HT[index])
         DeleteHead(HT[index]);
     else

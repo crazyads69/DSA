@@ -108,8 +108,6 @@ void RemoveHead(LIST &l)
         if (l.pHead == NULL)
             l.pTail = NULL;
     }
-    else
-        return;
 }
 
 void RemoveTail(LIST &l)
@@ -125,8 +123,6 @@ void RemoveTail(LIST &l)
         if (l.pTail == NULL)
             l.pHead = NULL;
     }
-    else
-        return;
 }
 
 void RemoveAfterQ(LIST &l, NODE *q)

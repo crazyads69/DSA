@@ -133,7 +133,7 @@ int CountNodeHasTwoChild(Tree root)
 int HeightBST(Tree root)
 {
     if (root == NULL)
-        return 0;
+        return -1;
     int left = HeightBST(root->left);
     int right = HeightBST(root->right);
     if (left > right)
@@ -167,9 +167,7 @@ void FindAndReplaceMinRight(Tree &p, Tree &root)
 
 void DeleteNode(Tree &root, int x)
 {
-    if (root == NULL)
-        return;
-    else
+    if (root != NULL)
     {
         if (root->info > x)
             DeleteNode(root->left, x);
