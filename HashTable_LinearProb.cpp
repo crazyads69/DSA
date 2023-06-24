@@ -3,16 +3,18 @@ using namespace std;
 
 #define MAX 100
 
-int Hash(int x)
-{
-    return x % MAX;
-}
+
 
 struct Node
 {
     int info;
 };
 typedef struct Node NODE;
+
+int Hash(int x)
+{
+    return x % MAX;
+}
 
 void CreateHashTable(NODE *HT[])
 {
@@ -52,6 +54,17 @@ NODE *SearchNode(NODE *HT[], int x)
     return NULL;
 }
 
+void DeleteNode(NODE *HT[], int x)
+{
+    int index = Hash(x);
+    while (HT[index]->info != x && HT[index]->info != NULL)
+    {
+        index = Hash(index + 1);
+    }
+    if (HT[index]->info == x)
+        HT[index] = NULL;
+}
+
 void PrintHashTable(NODE *HT[])
 {
     for (int i = 0; i < MAX; i++)
@@ -84,5 +97,7 @@ int main()
         cout << "Found: " << p->info << endl;
     else
         cout << "Not Found! " << endl;
+    DeleteNode(HT, 1);
+    PrintHashTable(HT);
     return 0;
 }
