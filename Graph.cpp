@@ -56,6 +56,40 @@ void DFS(int u, vector<int> adj[], bool visited[])
     }
 }
 
+void DFSPath(int u, vector<int> adj[], bool visited[], int parent[])
+{
+    visited[u] = true;
+    for (int i = 0; i < adj[u].size(); i++)
+    {
+        int v = adj[u][i];
+        if (visited[v] == false)
+        {
+            parent[v] = u;
+            DFS_Path(v, adj, visited, parent);
+        }
+    }
+}
+
+void FindPath(int u, int v, vector<int> adj[], bool visited[], int parent[])
+{
+    DFSPath(u, adj, visited, parent);
+    if (parent[v] == -1)
+        cout << "Khong co duong di";
+    else
+    {
+        vector<int> path;
+        while (v != u)
+        {
+            path.push_back(v);
+            v = parent[v];
+        }
+        path.push_back(u);
+        reverse(path.begin(), path.end());
+        for (int i = 0; i < path.size(); i++)
+            cout << path[i] << " ";
+    }
+}
+
 void BFS(int u, vector<int> adj[], bool visited[])
 {
     queue<int> q;
@@ -78,11 +112,35 @@ void BFS(int u, vector<int> adj[], bool visited[])
     }
 }
 
+void BFSPath(int u, vector<int> adj[], bool visited[], int parent[])
+{
+    queue<int> q;
+    q.push(u);
+    visited[u] = true;
+    while (q.empty() == false)
+    {
+        int v = q.front();
+        q.pop();
+        for (int i = 0; i < adj[v].size(); i++)
+        {
+            int x = adj[v][i];
+            if (visited[x] == false)
+            {
+                q.push(x);
+                visited[x] = true;
+                parent[x] = v;
+            }
+        }
+    }
+}
+
 int main()
 {
     vector<int> adj[1001];
     int a[1001][1001];
     bool visited[1001];
+    int parent[1001];
+    memset(parent, -1, sizeof(parent));
     memset(visited, false, sizeof(visited));
     int u;
     int n, m;
