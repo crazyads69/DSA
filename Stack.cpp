@@ -65,6 +65,18 @@ int Top(STACK s)
     return s.pHead->info;
 }
 
+int Size(STACK s)
+{
+    int count = 0;
+    NODE *p = s.pHead;
+    while (p != NULL)
+    {
+        count++;
+        p = p->pNext;
+    }
+    return count;
+}
+
 void PrintStack(STACK s)
 {
     while (IsEmpty(s) == false)

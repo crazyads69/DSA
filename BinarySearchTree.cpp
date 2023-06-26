@@ -110,6 +110,15 @@ int CountLeaf(Tree root)
     return CountLeaf(root->left) + CountLeaf(root->right);
 }
 
+int SumNodeAtSameLevel(Tree root, int k, int level = 0)
+{
+    if (root == NULL)
+        return 0;
+    if (level == k)
+        return root->info;
+    return SumNodeAtSameLevel(root->left, k, level + 1) + SumNodeAtSameLevel(root->right, k, level + 1);
+}
+
 int CountNodeHasOneChild(Tree root)
 {
     if (root == NULL)

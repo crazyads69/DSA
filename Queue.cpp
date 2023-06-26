@@ -66,6 +66,18 @@ int Front(QUEUE q)
     return q.pHead->info;
 }
 
+int Size(QUEUE q)
+{
+    int count = 0;
+    NODE *p = q.pHead;
+    while (p != NULL)
+    {
+        count++;
+        p = p->pNext;
+    }
+    return count;
+}
+
 void PrintQueue(QUEUE q)
 {
     while (IsEmpty(q) == false)

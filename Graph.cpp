@@ -33,6 +33,20 @@ void InputFromEdgeList(vector<int> adj[], int m)
     }
 }
 
+void InputFromAdjList(vector<int> adj[], int n)
+{
+    int u, v;
+    for (int i = 1; i <= n; i++)
+    {
+        cin >> u;
+        while (cin >> v)
+        {
+            adj[u].push_back(v);
+            adj[v].push_back(u); // Do thi vo huong
+        }
+    }
+}
+
 void PrintAdjList(vector<int> adj[], int n)
 {
     for (int i = 1; i <= n; i++)
@@ -73,6 +87,7 @@ void DFSPath(int u, vector<int> adj[], bool visited[], int parent[])
 void FindPath(int u, int v, vector<int> adj[], bool visited[], int parent[])
 {
     DFSPath(u, adj, visited, parent);
+    // BFSPath(u, adj, visited, parent);
     if (parent[v] == -1)
         cout << "Khong co duong di";
     else
@@ -134,6 +149,30 @@ void BFSPath(int u, vector<int> adj[], bool visited[], int parent[])
     }
 }
 
+int CountConnectedComponents(vector<int> adj[], int n, bool visited[])
+{
+    int count = 0;
+    for (int i = 1; i <= n; i++)
+    {
+        if (visited[i] == false)
+        {
+            ++count;
+            // cout << "Cac dinh lien thong la " << count << ": ";
+            BFS(i, adj, visited); // DFS(i, adj, visited);
+            cout << endl;
+        }
+    }
+    return count;
+}
+
+bool IsConnected(vector<int> adj[], int n, bool visited[])
+{
+    int count = CountConnectedComponents(adj, n, visited);
+    if (count == 1)
+        return true;
+    return false;
+}
+
 int main()
 {
     vector<int> adj[1001];
@@ -147,9 +186,13 @@ int main()
     cin >> n >> m;
     InputFromEdgeList(adj, m);
     // InputFromMatrix(a, adj, n);
+    // InputFromAdjList(adj, n);
     // PrintAdjList(adj, n);
     cin >> u;
     // BFS(u, adj, visited);
     // DFS(u, adj, visited);
+    // FindPath(u, v, adj, visited, parent);
+    // cout << CountConnectedComponents(adj, n, visited);
+    // cout << IsConnected(adj, n, visited);
     return 0;
 }
