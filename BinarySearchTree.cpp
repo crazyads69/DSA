@@ -142,7 +142,7 @@ int CountNodeHasTwoChild(Tree root)
 int HeightBST(Tree root)
 {
     if (root == NULL)
-        return -1;
+        return 0;
     int left = HeightBST(root->left);
     int right = HeightBST(root->right);
     if (left > right)
