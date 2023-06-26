@@ -88,6 +88,67 @@ void InputList(LIST &l)
     }
 }
 
+void SelectionSort(LIST &l)
+{
+    NODE *p = l.pHead;
+    NODE *q = new NODE;
+    NODE *min = new NODE;
+    while (p != l.pTail)
+    {
+        min = p;
+        q = p->pNext;
+        while (q != NULL)
+        {
+            if (q->info < min->info) // Neu giam dan thi doi thanh (q->info > min->info)
+                min = q;
+            q = q->pNext;
+        }
+        // Hoan doi p->info and min->info
+        int temp = p->info;
+        p->info = min->info;
+        min->info = temp;
+        p = p->pNext;
+    }
+}
+
+void QuickSort(LIST &l)
+{
+    NODE *p = new NODE;
+    NODE *X = new NODE;
+    LIST l1, l2;
+    if (l.pHead == l.pTail)
+        return; // Da co thu tu
+    CreateEmptyList(l1);
+    CreateEmptyList(l2);
+    X = l.pHead;
+    l.pHead = X->pNext;
+    while (l.pHead != NULL)
+    {
+        p = l.pHead;
+        l.pHead = p->pNext;
+        p->pNext = NULL;
+        if (p->info <= X->info) // Neu giam dan thi doi thanh (p->info >= X->info)
+            AddHead(l1, p);
+        else
+            AddHead(l2, p);
+    }
+    QuickSort(l1);
+    QuickSort(l2);
+    // Noi l1, X, l2 lai voi nhau
+    if (l1.pHead != NULL)
+    {
+        l.pHead = l1.pHead;
+        l1.pTail->pNext = X; // Noi X vao cuoi l1
+    }
+    else
+        l.pHead = X;
+    X->pNext = l2.pHead;
+    if (l2.pHead != NULL) // l2 co 1 phan tu
+        l.pTail = l2.pTail;
+    else // l2 rong
+        l.pTail = X;
+}
+
 void PrintList(LIST l)
 {
     NODE *p = l.pHead;
@@ -202,6 +263,9 @@ int main()
     PrintList(l);
     cout << endl;
     Reverse(l);
+    PrintList(l);
+    cout << endl;
+    QuickSort(l);
     PrintList(l);
     DestroyList(l);
     return 0;
